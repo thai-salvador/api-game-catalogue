@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameCatalogue</name>
+    </assembly>
+    <members>
+        <member name="M:GameCatalogue.Controllers.V1.GameController.Obtain(System.Int32,System.Int32)">
+            <summary>
+            Get all the games and return the paginated results
+            </summary>
+            <remarks>
+            It's not possible to return results without pagination
+            </remarks>
+            <param name="page">It indicates which page are being consulted. Miniumum 1 page</param>
+            <param name="quantity">It indicates the quantity of results per page. Miniumum 1 and maximum 50 results per page</param>
+            <response code="200">It returns the game list</response>
+            <response code="204">If doesn't have any games with the given Id</response>
+        </member>
+        <member name="M:GameCatalogue.Controllers.V1.GameController.Obtain(System.Guid)">
+            <summary>
+            Search a game by its Id
+            </summary>
+            <param name="gameId">The Game's Id</param>
+            <response code="200">It returns the game</response>
+            <response code="204">If there's no game with the Id informed </response>
+        </member>
+        <member name="M:GameCatalogue.Controllers.V1.GameController.AddGame(GameCatalogue.InputModel.GameInputModel)">
+            <summary>
+            Add a new game
+            </summary>
+            <param name="gameInputModel">Game's information</param>
+            <response code="200">In case of successful operation</response>
+            <response code="422">If already exists a game with the same name and producer</response>
+        </member>
+        <member name="M:GameCatalogue.Controllers.V1.GameController.UpdateGame(System.Guid,GameCatalogue.InputModel.GameInputModel)">
+            <summary>
+            Update all game's information
+            </summary>
+            <param name="gameId">The Id of the game to be updated</param>
+            <param name="gameInputModel">The new game's information</param>
+            <response code="200">In case of successful operation</response>
+            <response code="404">If doesn't have a game with this Id</response>
+        </member>
+        <member name="M:GameCatalogue.Controllers.V1.GameController.UpdateGame(System.Guid,System.Double)">
+            <summary>
+            Update a game's price
+            </summary>
+            <param name="gameId">The Id of the game to be updated</param>
+            <param name="price">The new game's price</param>
+            <response code="200">In case of successful operation</response>
+            <response code="404">If doesn't have a game with this Id</response>
+        </member>
+        <member name="M:GameCatalogue.Controllers.V1.GameController.DeleteGame(System.Guid)">
+            <summary>
+            Delete a game
+            </summary>
+            <param name="gameId">The Id of the game to be deleted</param>
+            <response code="200">In case of successful operation</response>
+            <response code="404">If doesn't have a game with this Id</response>
+        </member>
+    </members>
+</doc>
