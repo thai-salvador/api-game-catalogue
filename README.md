@@ -1,6 +1,6 @@
 ## Game Catalogue 🎮
 
-* In this API, we created a game catalogue using ADO .NET and asyncronous programming. 
+* In this API, we created a game catalogue using ADO .NET and asynchronous programming. 
 
 * The table was created prior to this project directly from SQL Server Management Studio:
 
